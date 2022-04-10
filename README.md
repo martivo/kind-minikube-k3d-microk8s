@@ -17,7 +17,7 @@ terraform apply -var="tutor-ssh-key=mykey" -var="aws-region=eu-central-1" -var="
 ```
 
 The terraform apply command will output the IP adresses of the created linux machines for each tool: kind, minikube, k3d and microk8s.
-The scripts will install, create and delete the kubernetes clusters. Measures the time and memory it takes to complate.
+The needed scripts and configurations are already copied to the hosts.
 
 ```
 ssh ubuntu@...
