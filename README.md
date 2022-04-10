@@ -1,8 +1,10 @@
 
-= Usage =
+
 The terraform code will create virtual machines with Ubuntu and installs docker on them. It also copies the relevant run_\* scripts to each create VM.
+Each script installs specific tool, then installs a kubernetes cluster using contianers and finally removes the cluster.
+These scripts are used to compare the memory requirements and speed of each tool.
 
-
+## Usage
 To create virtualmachines for the measurement set AWS credentials with env variables: AWS_ACCESS_KEY_ID and AWS_SERET_ACCESS_KEY.
 
 ```
