@@ -1,0 +1,19 @@
+apiVersion: k3d.io/v1alpha4 # this will change in the future as we make everything more stable
+kind: Simple # internally, we also have a Cluster config, which is not yet available externally
+metadata:
+  name: mycluster
+servers: 3
+agents: 5
+options:
+  k3d: 
+    wait: true
+    timeout: "600s"
+  k3s:
+    nodeLabels:
+      - label: ingress=true 
+        nodeFilters:
+          - agent:0,1
+    extraArgs: # additional arguments passed to the `k3s server|agent` command; same as `--k3s-arg`
+      - arg: --node-taint=ingress=true:NoSchedule
+        nodeFilters:
+          - agent:0,1
